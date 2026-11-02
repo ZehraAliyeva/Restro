@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1b1b1b;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.frame {
+  background: #000;
+  border-radius: 40px;
+  padding: 18px;
+  width: 100%;
+  max-width: 1160px;
+}
+
+.grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 265fr 263fr 268fr 270fr;
+  grid-template-rows: 232px 160px 157px 195px;
+  grid-template-areas:
+    "burger phone notif menu"
+    "burger sales sales menu"
+    "man    sales sales orders"
+    "man    rating map  map";
+}
+
+.card {
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.burger { grid-area: burger; }
+.phone  { grid-area: phone; }
+.notif  { grid-area: notif; }
+.menu   { grid-area: menu; }
+.sales  { grid-area: sales; }
+.man    { grid-area: man; }
+.orders { grid-area: orders; }
+.rating { grid-area: rating; }
+.map    { grid-area: map; }
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-template-areas:
+      "burger"
+      "phone"
+      "notif"
+      "menu"
+      "sales"
+      "man"
+      "orders"
+      "rating"
+      "map";
+  }
+
+  .card img {
+    height: auto;
+  }
+}
